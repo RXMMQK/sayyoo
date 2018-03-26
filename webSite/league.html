@@ -1,0 +1,356 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="杭州随寓网络科技有限公司，系德信地产子公司，是一家利用移动互联网信息技术，通过线上线下平台资源整合，实践O2O模式的专业公寓运营商。公司所打造的“随寓青年社区”营造“自由、独立、关怀、分享、参与”的居住氛围和社区文化。" />
+    <meta name="keywords" content="随寓、租房、青年社区、青年公寓、人才公寓、服务式公寓、酒店式公寓、管家服务、北软公寓、西溪寓、之美寓、金鹰大厦、西湖文化广场租房、城北租房、彭埠租房、下沙租房、转塘租房、留下租房、三墩租房、临平租房、未来科技城租房、瑞豪酒店、下沙酒店、小和山酒店" />
+    <meta name="baidu-site-verification" content="cFAXF1msQs" />
+    <title>随寓青年社区</title>
+	<link rel="shortcut icon" href="./img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<script>
+	document.write("<l"+"ink rel='stylesheet' href='./css/style.css?"+Math.random()+"'></l"+"ink>");
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/swiper-3.4.1.min.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/vue-resource.min.js"></script>
+	<!-- <script type="text/javascript" src="js/main.js"></script> -->
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui@1.4/lib/theme-default/index.css">
+	<!-- 引入组件库 -->
+	<!-- <script src="https://unpkg.com/element-ui@1.4/lib/index.js"></script> -->
+	<script src="https://unpkg.com/element-ui@1.4.12/lib/index.js"></script>
+</head>
+<body>
+	<div class="pageLeague">
+		<!-- 导航 -->
+		<div class="headerNav">
+			<div class="mainBody f-cb">
+				<div class="HNLeft"><a href="index.html"></a></div>
+				<div class="HNMiddle">
+					<a href="index.html">首页</a>
+					<a href="aparment.html">随寓公寓</a>
+					<a href="league.html" class="cur">房屋托管</a>
+					<a href="about.html">关于随寓</a>
+					<a href="https://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E6%9D%AD%E5%B7%9E&kw=%E6%9D%AD%E5%B7%9E%E9%9A%8F%E5%AF%93%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sm=0&p=1" target="_blank">加入我们</a>
+				</div>
+				<div class="HNRight">
+					<p class="phone">400-060-2897</p>
+					<p class="loaction">杭州<a href="javascript:void(0)">[切到上海]</a></p>
+				</div>
+			</div>
+		</div>
+		<!-- banner -->
+		<div class="banner swiper-container">
+			<div class="swipper swiper-wrapper">
+				<div class="swiper-slide"><img src="img/banner5.jpg"></div>
+			</div>
+			<div class="form" id="space-detail">
+				<p>一键托管房屋</p>
+				<input type="text" v-model="info.name" name="" placeholder="姓名">
+				<input type="text" v-model="info.phone" name="" maxlength="11" placeholder="联系方式">
+				<input type="text" v-model="info.houseSpace" name="" placeholder="请输入小区名">
+				<!-- <div class="apartment">
+				    <el-autocomplete
+				      class="inline-input"
+				      v-model="info.houseSpace"
+				      :fetch-suggestions="querySearch"
+				      placeholder="请输入小区名"
+				      :trigger-on-focus="false"
+				      @select="handleSelect"
+				    ></el-autocomplete>
+				</div> -->
+				<input type="button" name="" value="立即托管" @click="submit">
+			</div>
+		</div>
+		<!-- 理由 -->
+		<div class="reason">
+			<div class="mainBody f-cb">
+				<div class="tit">
+					<span></span>
+					<div class="mid">
+						<p>选择随寓的理由</p>
+						<div></div>
+					</div>
+					<span></span>
+				</div>
+				<div class="body">
+					<ul>
+						<li><div></div></li>
+						<li><div><p>智能化<br>管理模式</p></div></li>
+						<li><div><p>专业的<br>设计团队</p></div></li>
+						<li><div></div></li>
+						<li><div><p>稳健的<br>持续收益</p></div></li>
+						<li><div></div></li>
+						<li><div><p>靠谱的<br>租客来源</p></div></li>
+					</ul>
+					<a href="javascript:void(0)" class="booking">立即托管</a>
+				</div>
+			</div>
+		</div>
+		<!-- 产品 -->
+		<div class="product">
+			<div class="mainBody f-cb">
+				<div class="tit">
+					<span></span>
+					<div class="mid">
+						<p>随寓有哪些产品</p>
+						<div></div>
+					</div>
+					<span></span>
+				</div>
+				<div class="body">
+					<ul>
+						<li>
+							<div class="img"><img src="img/league3_08.png"></div>
+							<p>集中式单身公寓<span>主要针对有收入基础的青年白领，注入创业、社交等主题元素，目前已有西溪寓、之美寓、北软人才公寓等。</span></p>
+						</li>
+						<li>
+							<div class="img"><img src="img/3.jpg"></div>
+							<p>分散式的合租公寓<span>主要针对刚毕业的年轻人，分布于新交付的小区内，目前已在德信东望、德信晓宸、东壹号等小区内有上百套房源。</span></p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 流程 -->
+		<div class="process">
+			<div class="mainBody f-cb">
+				<div class="tit">
+					<span></span>
+					<div class="mid">
+						<p>房屋托管流程</p>
+						<div></div>
+					</div>
+					<span></span>
+				</div>
+				<div class="body">
+					<ul class="f-cb">
+						<li>
+							<div class="icon"></div>
+							<p class="p1">提交托管信息</p>
+							<p class="p2">1</p>
+							<p class="p3">提交基本信息在线托管，或直接拨打托管热线</p>
+						</li>
+						<li>
+							<div class="icon"></div>
+							<p class="p1">与管家沟通</p>
+							<p class="p2">2</p>
+							<p class="p3">业主服务中心2个小时内会给你回电，指派专属管家</p>
+						</li>
+						<li>
+							<div class="icon"></div>
+							<p class="p1">制定出租方案</p>
+							<p class="p2">3</p>
+							<p class="p3">随寓管家上门实勘报价，制定托管方案</p>
+						</li>
+						<li>
+							<div class="icon"></div>
+							<p class="p1">成为随寓业主</p>
+							<p class="p2">4</p>
+							<p class="p3">签署托管协议，尊享随寓资产管理服务</p>
+						</li>
+					</ul>
+					<div class="line"></div>
+					<a href="javascript:void(0)" class="booking">立即托管</a>
+				</div>
+			</div>
+		</div>
+		<!-- 底部 -->
+		<div class="footer">
+			<div class="top">
+				<div class="mainBody f-cb">
+					<div class="left"></div>
+					<div class="mid">
+						<div>
+							<p>地址：杭州市拱墅区祥园路35号</p>
+							<p>电话：400-060-2897</p>
+							<p>邮箱：suiyu@dexingroup.com</p>
+						</div>
+					</div>
+					<div class="right">
+						<div></div>
+						<p>关注随寓公众号，了解动态</p>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">copyright © 2018 杭州随寓网络科技有限公司 ALL Rights Reserved 浙ICP备16011080号</div>
+		</div> 
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".booking").click(function(){
+		$('body').animate({scrollTop: 0}, 500)
+	});
+	var houseUrl = mix.house
+	var saveUrl = mix.save
+	var houseDetail = new Vue({
+        el: '#space-detail',
+        data: {
+        	data: [],
+        	spaceList: [],
+        	house: '',
+        	info: {
+        		name: '',
+        		phone: '',
+        		houseSpace: '',
+        		Bid: ''
+        	},
+        	restaurants: []
+        },
+        ready:function(){
+        },
+        mounted () {
+        	if (city == 'HZ'){
+        		$('.banner img').attr("src", "./img/banner5.jpg")
+        	} else if (city == 'SH'){
+        		$('.banner img').attr("src", "./img/banner2.png")
+        	}
+        },
+        methods: {
+        	booking: function (value) {
+        		$('body').animate({scrollTop: 0}, 500)
+        	},
+        	chooseHouseSpace: function (value) {
+        		this.info.houseSpace = value.name
+        		this.info.Bid = value.id
+        	},
+        	submit: function () {
+		        let _this = this
+
+		        if (this.info.name == '' || this.info.name == '姓名') {
+		            // alert('请输入您的姓名');
+			         _this.$message({
+			            type: 'error',
+			            message: '请输入您的姓名'
+			          });
+		            return false;
+		        };
+
+		        if (this.info.phone == '' || this.info.phone == '联系方式') {
+		            // alert('请输入您的联系方式');
+			         _this.$message({
+			            type: 'error',
+			            message: '请输入您的联系方式'
+			          });
+		            return false;
+		        };
+		        if (this.info.houseSpace == '' || this.info.houseSpace == '所在小区') {
+		            // alert('请输入所在小区');
+			         _this.$message({
+			            type: 'error',
+			            message: '请输入所在小区'
+			          });
+		            return false;
+		        };
+		        //提交数据
+		        $.ajax({
+		            url: saveUrl,
+		            type: 'POST',
+		            data: {
+		                name: this.info.name,
+		                phone: this.info.phone,
+		                area: this.info.houseSpace,
+		                source: ''
+		            },
+		            success:function(res){
+		               // console.log(res)
+		               res = $.parseJSON(res)
+		               if (res.state == 1000) {
+		               		// alert("您提交的信息我们已收到，稍后会有工作人员和您联系，感谢您对随寓的支持。")
+				         _this.$message({
+				            type: 'success',
+				            message: '您提交的信息我们已收到，稍后会有工作人员和您联系，感谢您对随寓的支持!'
+				          });
+				         _this.info.name = ''
+				         _this.info.phone = ''
+				         _this.info.Bid = ''
+				         _this.info.houseSpace = ''
+		               } else {
+				         _this.$message({
+				            type: 'error',
+				            message: '信息提交有误，请稍后重试！'
+				          });
+		               }
+		            }
+		        })
+        	},
+        	showHouse: function (value) {
+        		let list = {}
+        		list.esType = 'HOUSE_SPACE'
+        		list.keyword = value
+        		list.pageNumber = 10
+        		list.pageSize = 1
+        		$.ajax({
+        			url: houseUrl,
+        			type: 'POST',
+			        contentType: 'application/json',
+			        cache: false,
+			        async: false,
+			        dataType: 'json',
+        			data: JSON.stringify(list)
+        		})
+        		.done(function(data) {
+        			// console.log(data.data.list)
+        			this.spaceList = []
+        			for (var i = 0; i < data.data.list.length; i++) {
+        				this.spaceList.push(data.data.list[i])
+        			}
+        			console.log(this.spaceList)
+        			// this.show = true
+        			$(".apartment ul").prevObject.context.activeElement.style.display = 'block'
+        			console.log($(".apartment ul").prevObject.context.activeElement.style.display)
+        			// console.log($(".aparment ul").prevObject.activeElement.style.display)
+        		})
+        	},
+        	querySearch: function (value, cb) {
+        		if (value) {
+	        		let list = {}
+	        		list.esType = 'HOUSE_SPACE'
+	        		list.keyword = value
+	        		list.pageNumber = 10
+	        		list.pageSize = 1
+	        		$.ajax({
+	        			url: houseUrl,
+	        			type: 'POST',
+				        contentType: 'application/json',
+				        cache: false,
+				        async: false,
+				        dataType: 'json',
+	        			data: JSON.stringify(list)
+	        		})
+	        		.done(function(data) {
+		        		this.spaceList = []
+		        		let restaurant = []
+	        			if (data.code == 200) {
+		        			for (var i = 0; i < data.data.list.length; i++) {
+		        				let res = {}
+		        				res.value = data.data.list[i].blockName
+		        				res.people = data.data.list[i].landlordName
+		        				restaurant.push(res)
+		        			}
+	        			} else {
+		        			restaurant = []
+	        			}
+	        			this.restaurants = restaurant
+	        			cb(this.restaurants)
+	        		})
+
+        		}
+        	},
+        	handleSelect: function (value) {
+        		console.log(value)
+        		this.info.houseSpace = value.value
+        		console.log(this.info.houseSpace)
+        		console.log(this.info)
+        	}
+        }
+	})
+})
+</script>

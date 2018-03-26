@@ -1,0 +1,262 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="杭州随寓网络科技有限公司，系德信地产子公司，是一家利用移动互联网信息技术，通过线上线下平台资源整合，实践O2O模式的专业公寓运营商。公司所打造的“随寓青年社区”营造“自由、独立、关怀、分享、参与”的居住氛围和社区文化。" />
+    <meta name="keywords" content="随寓、租房、青年社区、青年公寓、人才公寓、服务式公寓、酒店式公寓、管家服务、北软公寓、西溪寓、之美寓、金鹰大厦、西湖文化广场租房、城北租房、彭埠租房、下沙租房、转塘租房、留下租房、三墩租房、临平租房、未来科技城租房、瑞豪酒店、下沙酒店、小和山酒店" />
+    <meta name="baidu-site-verification" content="cFAXF1msQs" />
+    <title>随寓青年社区</title>
+	<link rel="shortcut icon" href="./img/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<script>
+	document.write("<l"+"ink rel='stylesheet' href='./css/style.css?"+Math.random()+"'></l"+"ink>");
+	</script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<!-- <script type="text/javascript" src="js/main.js"></script> -->
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script>
+	<style type="text/css">
+.pageAparment .banner{
+	height: 550px;
+}
+.pageAparment .banner .swipper img{
+	height: 550px;
+}
+</style>
+</head>
+<body>
+	<div class="pageAparment">
+		<!-- 导航 -->
+		<div class="headerNav">
+			<div class="mainBody f-cb">
+				<div class="HNLeft"><a href="index.html"></a></div>
+				<div class="HNMiddle">
+					<a href="index.html">首页</a>
+					<a href="aparment.html" class="cur">随寓公寓</a>
+					<a href="league.html">房屋托管</a>
+					<a href="about.html">关于随寓</a>
+					<a href="https://sou.zhaopin.com/jobs/searchresult.ashx?jl=%E6%9D%AD%E5%B7%9E&kw=%E6%9D%AD%E5%B7%9E%E9%9A%8F%E5%AF%93%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&sm=0&p=1" target="_blank">加入我们</a>
+				</div>
+				<div class="HNRight">
+					<p class="phone">400-060-2897</p>
+					<p class="loaction">杭州<a href="javascript:void(0)">[切到上海]</a></p>
+				</div>
+			</div>
+		</div>
+		<!-- banner -->
+		<div class="banner swiper-container">
+			<div class="swipper swiper-wrapper">
+				<div class="swiper-slide"><img src="img/banner9.jpg"></div>
+			</div>
+			<!-- <div class="form">
+				<p>开启你的随寓体验之旅</p>
+				<input type="text" class="name" name="" placeholder="姓名">
+				<input type="text" class="phone" name="" placeholder="联系方式">
+				<div class="apartment">
+					<input type="text" class="" name="" placeholder="预约公寓" readonly="readonly">
+				</div>
+				<input type="button" name="" value="立即预约">
+			</div> -->
+		</div>
+		<div class="aparment">
+			<div class="mainBody f-cb">
+				<p class="tit">共15家门店</p>
+				<div class="left" id="space-list">
+					<ul>
+						<li v-for="item in data" :id="item.id" @click="detail(item)">
+							<div class="img"><img :src="item.img"></div>
+							<div class="font">
+								<p class="p1">{{item.name}}</p>
+								<p class="p2">{{item.address}}</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="right" id="map"></div>
+			</div>
+		</div>
+		<!-- 底部 -->
+		<div class="footer">
+			<div class="top">
+				<div class="mainBody f-cb">
+					<div class="left"></div>
+					<div class="mid">
+						<div>
+							<p>地址：杭州市拱墅区祥园路35号</p>
+							<p>电话：400-060-2897</p>
+							<p>邮箱：suiyu@dexingroup.com</p>
+						</div>
+					</div>
+					<div class="right">
+						<div></div>
+						<p>关注随寓公众号，了解动态</p>
+					</div>
+				</div>
+			</div>
+			<div class="bottom">copyright © 2018 杭州随寓网络科技有限公司 ALL Rights Reserved 浙ICP备16011080号</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	// $(".aparment .left li").click(function(){
+	// 	console.log($(this).attr('id'))
+	// 	window.location.href="detail.html"
+	// })
+	var str = ''
+	var x = ''
+	var y = ''
+	var z = ''
+	if (city == 'HZ'){
+		str = '共15家门店'
+		x = 120.115719
+		y = 30.280901
+		z = 12
+		$('.banner img').attr("src", "./img/banner9.jpg")
+	} else if (city == 'SH'){
+		str = '共8大区域'
+		x = 121.480237
+		y = 31.256305
+		z = 13
+		$('.banner img').attr("src", "./img/5.jpg")
+	} 
+	$(".aparment .tit").html(str)
+	var spaceList = new Vue({
+        //导航
+        el: '#space-list',
+        data: {
+        	data: []
+        },
+        methods: {
+        	detail (value) {
+        		// console.log(value)
+        		localStorage.setItem("houseSpaceId",value.id);
+        		window.location.href="detail.html"
+        	}
+        }
+    });	
+    var str = []
+
+	// 加载数据
+	$.get(mix.spaceListlUrl + "?city=" + city, function(data) {
+		for (var i = 0; i < data.result[0].hasimgs.length; i++) {
+			// str += data.result[0].hasimgs[i]
+			var list = {}
+			list.title = data.result[0].hasimgs[i].name
+			list.content = data.result[0].hasimgs[i].address
+			// list.point = data.result[0].hasimgs[i].
+			list.point = data.result[0].hasimgs[i].longitude + '|' + data.result[0].hasimgs[i].dimension
+			list.isOpen = 0
+			list.icon = {w:21,h:21,l:0,t:0,x:6,lb:5}
+			str.push(list)
+		}
+		spaceList.data = data.result[0].hasimgs
+    	initMap();//创建和初始化地图
+	})
+
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        // setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("map");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(x,y);//定义一个中心点坐标
+        // var point = new BMap.Point(,);//定义一个中心点坐标
+        map.centerAndZoom(point,z);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	// map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	// map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	// map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = str;
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("./img/map.png", new BMap.Size('22px','35px'),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+
+})
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<script type="text/javascript">
+</script>
